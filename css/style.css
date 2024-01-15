@@ -1,0 +1,56 @@
+.btnrow-bot {
+  width: 404px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.btnrow-bot button {
+  width: 99px;
+  margin: 1px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: black, solid;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.btnrowtop {
+  width: 404px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.btnrowtop button {
+  width: 49%;
+  margin: 1px;
+  aspect-ratio: 1/0.2;
+  border-radius: 20px;
+  border: black, solid;
+}
+
+.screen {
+  width: 398px;
+  aspect-ratio: 1/0.2;
+  padding: 1px;
+  background-color: grey;
+  border-radius: 20px;
+  border: black, solid;
+}
+
+.container {
+  width: 450px;
+  height: 600px;
+  margin: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: silver;
+  border-radius: 20px;
+  border: black, solid;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
