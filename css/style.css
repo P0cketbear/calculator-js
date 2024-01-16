@@ -1,15 +1,35 @@
+@font-face {
+  font-family: myfont;
+  src: url(../assets/fonts/Calculator.ttf);
+}
+
+* {
+  font-family: "myfont", sans-serif;
+}
 .btnrow-bot {
   width: 404px;
   display: flex;
   flex-wrap: wrap;
 }
 .btnrow-bot button {
-  width: 99px;
-  margin: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 97px;
+  margin: 2px;
   aspect-ratio: 1/1;
-  border-radius: 50%;
-  border: black, solid;
-  font-size: x-large;
+  border-radius: 25%;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f3c5bd+0,e86c57+50,ea2803+51,ff6600+75,c72200+100;Red+Gloss */
+  background: linear-gradient(
+    135deg,
+    #f3c5bd 0%,
+    #e86c57 50%,
+    #ea2803 51%,
+    #ff6600 75%,
+    #c72200 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  font-size: 300%;
   font-weight: bolder;
 }
 
@@ -25,16 +45,62 @@
   margin: 1px;
   aspect-ratio: 1/0.2;
   border-radius: 20px;
-  border: black, solid;
+  font-size: 200%;
+  font-weight: bolder;
+
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f3c5bd+0,e86c57+50,ea2803+51,ff6600+75,c72200+100;Red+Gloss */
+  background: linear-gradient(
+    135deg,
+    #ffa292 5%,
+    #e86c57 50%,
+    #ea2803 51%,
+    #ff6600 75%,
+    #9f1b01 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .screen {
   width: 398px;
-  aspect-ratio: 1/0.2;
+  aspect-ratio: 1/0.25;
   padding: 1px;
-  background-color: grey;
-  border-radius: 20px;
-  border: black, solid;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e5e696+0,d1d360+100;Wax+3D */
+  background: linear-gradient(
+    135deg,
+    #a8c64e 5%,
+    #c1d285 50%,
+    #b6cd7a 51%,
+    #d9e79a 75%,
+    #a8c64e 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  margin-bottom: 5px;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgb(7, 7, 7, 1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.inputs {
+  display: flex;
+  padding: 2%;
+  height: 20%;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.result {
+  display: flex;
+  padding: 2%;
+  height: 20%;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 25px;
 }
 
 .container {
@@ -44,9 +110,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: silver;
-  border-radius: 20px;
-  border: black, solid;
+
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f3c5bd+0,e86c57+50,ea2803+51,ff6600+75,c72200+100;Red+Gloss */
+  background: linear-gradient(
+    135deg,
+    #ffa292 5%,
+    #e86c57 50%,
+    #ea2803 51%,
+    #ff6600 75%,
+    #9f1b01 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 body {
