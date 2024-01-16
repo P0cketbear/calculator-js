@@ -38,4 +38,17 @@ function operate(a, ops, b) {
             break;
     }
 
-} 
+}
+
+
+const btn_number = document.querySelectorAll('.btn_number');
+const btn_options = document.querySelectorAll('.btn_options');
+const btn_operators = document.querySelectorAll('.btn_operators');
+
+
+btn_number.forEach((el, i) => {
+    el.addEventListener('click', () => console.log(el.textContent))
+})
+console.log(btn_number)
+console.log(btn_options)
+console.log(btn_operators)
