@@ -5,6 +5,7 @@
 let a = "";
 let b = "";
 let ops = "";
+let result = "";
 
 // operations functions
 
@@ -24,23 +25,28 @@ function divide(a, b) {
 }
 
 function operate(a, ops, b) {
-
+    console.log(b)
+    console.log(a)
+    console.log(ops)
     switch (ops) {
         case "+":
-            result.textContent = add(a, b);
+            result = add(a, b);
+            results.textContent = result;
             break;
         case "-":
-            result.textContent = substract(a, b)
+            result = substract(a, b);
+            results.textContent = result;
             break;
         case "x":
-            result.textContent = multiply(a, b)
-            break;
-        case "*":
-            result.textContent = multiply(a, b)
+            result = multiply(a, b);
+            results.textContent = result;
             break;
         case "/":
-            result.textContent = divide(a, b).toFixed(1)
+            result = divide(a, b).toFixed(1);
+            results.textContent = result;
             break;
+
+
     }
 
 }
@@ -54,19 +60,19 @@ const btn_equals = document.querySelector('.btn_equals')
 
 // Screen selectors
 const inputs = document.querySelector('.inputs');
-const result = document.querySelector('.result');
+const results = document.querySelector('.result');
 
 
 btn_number.forEach((btnN) => {
     btnN.addEventListener('click', () => {
         if (ops === "") {
             a += btnN.textContent;
-            inputs.textContent = a
+
         } else {
             b += btnN.textContent;
-            inputs.textContent = b
-        }
 
+        }
+        inputs.textContent += btnN.textContent
     });
 });
 
@@ -78,19 +84,23 @@ btn_operators.forEach((btnOp) => {
 
 })
 
-btn_equals.addEventListener('click', () => operate(a, ops, b))
+btn_equals.addEventListener('click', () => operate(a, ops, b)
+)
 
 
 btn_options.forEach((btnO) => {
     btnO.addEventListener('click', () => {
         let option = btnO.textContent.toLowerCase();
-        if (option = "clear") {
+        if (option === "clear") {
             inputs.textContent = "";
-            result.textContent = "";
+            results.textContent = "";
             a = "";
             b = "";
             ops = "";
+        } else {
+
         }
+        console.log(option)
     })
 })
 
