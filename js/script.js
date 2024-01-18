@@ -81,4 +81,16 @@ btn_operators.forEach((btnOp) => {
 btn_equals.addEventListener('click', () => operate(a, ops, b))
 
 
+btn_options.forEach((btnO) => {
+    btnO.addEventListener('click', () => {
+        let option = btnO.textContent.toLowerCase();
+        if (option = "clear") {
+            inputs.textContent = "";
+            result.textContent = "";
+            a = "";
+            b = "";
+            ops = "";
+        }
+    })
+})
 
