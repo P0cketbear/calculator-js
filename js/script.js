@@ -25,9 +25,10 @@ function divide(a, b) {
 }
 
 function operate(a, ops, b) {
-    console.log(b)
     console.log(a)
     console.log(ops)
+    console.log(b)
+
     switch (ops) {
         case "+":
             result = add(a, b);
@@ -45,7 +46,6 @@ function operate(a, ops, b) {
             result = divide(a, b).toFixed(1);
             results.textContent = result;
             break;
-
 
     }
 
@@ -68,6 +68,9 @@ btn_number.forEach((btnN) => {
         if (ops === "") {
             a += btnN.textContent;
 
+        } else if (result) {
+            a = result;
+            b += btnN.textContent;
         } else {
             b += btnN.textContent;
 
@@ -84,7 +87,11 @@ btn_operators.forEach((btnOp) => {
 
 })
 
-btn_equals.addEventListener('click', () => operate(a, ops, b)
+btn_equals.addEventListener('click', () => {
+    operate(a, ops, b)
+    a = "";
+    b = "";
+}
 )
 
 
@@ -97,7 +104,9 @@ btn_options.forEach((btnO) => {
             a = "";
             b = "";
             ops = "";
+            result = "";
         } else {
+            inputs.textContent = "tu pa tutupa tu pa tutu pa";
 
         }
         console.log(option)
