@@ -12,39 +12,42 @@ let result = "";
 
 function add(a, b) {
 
-    return parseFloat(a) + parseFloat(b);
+    return a + b;
 
 }
 function substract(a, b) {
-    return parseFloat(a) - parseFloat(b);;
+    return a - b;
 }
 function multiply(a, b) {
-    return parseFloat(a) * parseFloat(b);
+    return a * b;
 }
 function divide(a, b) {
-    return parseFloat(a) / parseFloat(b);;
+    return a / b;
 }
 
 function operate(a, ops, b) {
-    console.log(a)
-    console.log(ops)
-    console.log(b)
+    parseFloat(a);
+    parseFloat(b);
 
     switch (ops) {
         case "+":
-            result = add(a, b);
+            result = add(a, b).toFixed(5);
             results.textContent = result;
             break;
         case "-":
-            result = substract(a, b);
+            result = substract(a, b).toFixed(5);
             results.textContent = result;
             break;
         case "x":
-            result = multiply(a, b);
+            result = multiply(a, b).toFixed(5);
             results.textContent = result;
             break;
         case "/":
-            result = divide(a, b).toFixed(1);
+            if (a === 0 || b === 0) {
+                result = "ERROR, PRESS CLEAR"
+            } else { result = divide(a, b).toFixed(5); }
+
+
             results.textContent = result;
             break;
 
@@ -56,7 +59,7 @@ function operate(a, ops, b) {
 const btn_options = document.querySelectorAll('.btn_options');
 const btn_operators = document.querySelectorAll('.btn_operators');
 const btn_number = document.querySelectorAll('.btn_number');
-const btn_equals = document.querySelector('.btn_equals')
+const btn_equals = document.querySelector('.btn_equals');
 
 
 // Screen selectors
@@ -66,9 +69,9 @@ const results = document.querySelector('.result');
 
 btn_number.forEach((btnN) => {
     btnN.addEventListener('click', () => {
-        if (ops === "") {
+        if (!ops) {
             a += btnN.textContent;
-
+            console.log(a)
         } else if (result && !b) {
             a = result;
             b += btnN.textContent;
@@ -83,7 +86,6 @@ btn_number.forEach((btnN) => {
 
 btn_operators.forEach((btnOp) => {
     btnOp.addEventListener('click', () => {
-
 
         if (a && b) {
             let prevOps = ops;
@@ -101,7 +103,7 @@ btn_operators.forEach((btnOp) => {
 })
 
 btn_equals.addEventListener('click', () => {
-    operate(a, ops, b)
+    operate(a, ops, b);
     a = "";
     b = "";
 }
@@ -120,7 +122,24 @@ btn_options.forEach((btnO) => {
             result = "";
             prevOps = "";
         } else {
-            inputs.textContent = "tu pa tutupa tu pa tutu pa";
+            const punkSongs = [
+                "Anarchy in the UK",
+                "Maxwell Murder",
+                "The Press Corpse",
+                "Sold as Freedom",
+                "Bro Hynm",
+                "F**k Authority",
+                "American Jesus",
+                "Punk Rock Song",
+                "Stuck with me",
+                "Luv Luv Luv",
+                "The 11th Hour",
+                "On a turntable"
+            ];
+
+
+            const random = Math.floor(Math.random() * punkSongs.length);
+            inputs.textContent = punkSongs[random];
 
         }
         console.log(option)
