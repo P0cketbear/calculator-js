@@ -117,9 +117,13 @@ btnOperators.forEach((btnOp) => {
 })
 
 btnEquals.addEventListener('click', () => {
-    operate(a, ops, b);
-    a = "";
-    b = "";
+
+    if (a && b) {
+        operate(a, ops, b);
+        a = "";
+        b = "";
+    }
+
 }
 )
 
