@@ -26,8 +26,8 @@ function divide(a, b) {
 }
 
 function operate(a, ops, b) {
-    parseFloat(a);
-    parseFloat(b);
+    a = parseFloat(a);
+    b = parseFloat(b);
 
     switch (ops) {
         case "+":
