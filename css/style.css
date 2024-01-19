@@ -27,7 +27,7 @@
     #ea2803 51%,
     #ff6600 75%,
     #c72200 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  );
 
   font-size: 300%;
   font-weight: bolder;
@@ -56,7 +56,7 @@
     #ea2803 51%,
     #ff6600 75%,
     #9f1b01 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  );
 }
 
 .screen {
@@ -71,7 +71,7 @@
     #b6cd7a 51%,
     #d9e79a 75%,
     #a8c64e 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  );
 
   margin-bottom: 5px;
   border-radius: 16px;
@@ -119,7 +119,7 @@
     #ea2803 51%,
     #ff6600 75%,
     #9f1b01 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  );
 
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -132,4 +132,5 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: darkgrey;
 }
