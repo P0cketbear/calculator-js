@@ -5,7 +5,7 @@
 let a = "";
 let b = "";
 let ops = "";
-let result = "";
+let result = 0;
 
 
 // operations functions
@@ -31,23 +31,29 @@ function operate(a, ops, b) {
 
     switch (ops) {
         case "+":
-            result = add(a, b).toFixed(5);
+            result = add(a, b);
             results.textContent = result;
             break;
         case "-":
-            result = substract(a, b).toFixed(5);
+            result = substract(a, b);
             results.textContent = result;
             break;
         case "x":
-            result = multiply(a, b).toFixed(5);
-            results.textContent = result;
+            result = multiply(a, b)
+            if (result.toString().includes('.')) {
+                result = result.toFixed(2);
+            }
+            results.textContent = result
             break;
         case "/":
             if (a === 0 || b === 0) {
-                result = "ERROR, PRESS CLEAR"
-            } else { result = divide(a, b).toFixed(5); }
-
-
+                result = "ERROR, PRESS CLEAR";
+            } else {
+                result = divide(a, b);
+                if (result.toString().includes('.')) {
+                    result = result.toFixed(3);
+                }
+            }
             results.textContent = result;
             break;
 
@@ -71,7 +77,7 @@ btn_number.forEach((btnN) => {
     btnN.addEventListener('click', () => {
         if (!ops) {
             a += btnN.textContent;
-            console.log(a)
+
         } else if (result && !b) {
             a = result;
             b += btnN.textContent;
