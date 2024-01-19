@@ -62,10 +62,10 @@ function operate(a, ops, b) {
 }
 
 // inputs buttons selectors
-const btn_options = document.querySelectorAll('.btn_options');
-const btn_operators = document.querySelectorAll('.btn_operators');
-const btn_number = document.querySelectorAll('.btn_number');
-const btn_equals = document.querySelector('.btn_equals');
+const btnOptions = document.querySelectorAll('.btnOptions');
+const btnOperators = document.querySelectorAll('.btnOperators');
+const btnNumber = document.querySelectorAll('.btnNumber');
+const btnEquals = document.querySelector('.btnEquals');
 
 
 // Screen selectors
@@ -73,24 +73,32 @@ const inputs = document.querySelector('.inputs');
 const results = document.querySelector('.result');
 
 
-btn_number.forEach((btnN) => {
+btnNumber.forEach((btnN) => {
     btnN.addEventListener('click', () => {
+
+        let pushed = btnN.textContent;
         if (!ops) {
-            a += btnN.textContent;
+            if (!a && pushed === '.') {
+                pushed = "";
+            }
+            a += pushed;
 
         } else if (result && !b) {
             a = result;
-            b += btnN.textContent;
+            b += pushed;
         } else {
-            b += btnN.textContent;
+            if (!b && pushed === '.') {
+                pushed = "";
+            }
+            b += pushed;
 
         }
 
-        inputs.textContent += btnN.textContent
+        inputs.textContent += pushed;
     });
 });
 
-btn_operators.forEach((btnOp) => {
+btnOperators.forEach((btnOp) => {
     btnOp.addEventListener('click', () => {
 
         if (a && b) {
@@ -108,7 +116,7 @@ btn_operators.forEach((btnOp) => {
 
 })
 
-btn_equals.addEventListener('click', () => {
+btnEquals.addEventListener('click', () => {
     operate(a, ops, b);
     a = "";
     b = "";
@@ -116,7 +124,7 @@ btn_equals.addEventListener('click', () => {
 )
 
 
-btn_options.forEach((btnO) => {
+btnOptions.forEach((btnO) => {
     btnO.addEventListener('click', () => {
         let option = btnO.textContent.toLowerCase();
         if (option === "clear") {
