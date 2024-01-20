@@ -1,3 +1,7 @@
+//sounds 
+
+let keySnd = new Audio('./assets/sound/key.mp3');
+keySnd.load();
 
 
 // input vars
@@ -75,7 +79,8 @@ const results = document.querySelector('.result');
 
 btnNumber.forEach((btnN) => {
     btnN.addEventListener('click', () => {
-
+        keySnd.currentTime = 0;
+        keySnd.play();
         let pushed = btnN.textContent;
         if (!ops) {
             if (!a && pushed === '.') {
