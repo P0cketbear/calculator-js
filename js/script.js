@@ -150,6 +150,8 @@ btnOptions.forEach((btnO) => {
             ops = "";
             result = "";
             prevOps = "";
+            punk.pause()
+
         } else {
             const punkSongs = [
                 "Anarchy in the UK",
