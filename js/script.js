@@ -3,6 +3,8 @@
 let keySnd = new Audio('./assets/sound/key.mp3');
 keySnd.load();
 
+let punk = new Audio('./assets/sound/punk.mp3');
+punk.load();
 
 // input vars
 
@@ -105,7 +107,8 @@ btnNumber.forEach((btnN) => {
 
 btnOperators.forEach((btnOp) => {
     btnOp.addEventListener('click', () => {
-
+        keySnd.currentTime = 0;
+        keySnd.play();
         if (a && b) {
             let prevOps = ops;
             operate(a, prevOps, b)
@@ -122,7 +125,8 @@ btnOperators.forEach((btnOp) => {
 })
 
 btnEquals.addEventListener('click', () => {
-
+    keySnd.currentTime = 0;
+    keySnd.play();
     if (a && b) {
         operate(a, ops, b);
         a = "";
@@ -137,6 +141,8 @@ btnOptions.forEach((btnO) => {
     btnO.addEventListener('click', () => {
         let option = btnO.textContent.toLowerCase();
         if (option === "clear") {
+            keySnd.currentTime = 0;
+            keySnd.play();
             inputs.textContent = "";
             results.textContent = "";
             a = "";
@@ -163,6 +169,9 @@ btnOptions.forEach((btnO) => {
 
             const random = Math.floor(Math.random() * punkSongs.length);
             inputs.textContent = punkSongs[random];
+
+            punk.currentTime = 0;
+            punk.play();
 
         }
         console.log(option)
